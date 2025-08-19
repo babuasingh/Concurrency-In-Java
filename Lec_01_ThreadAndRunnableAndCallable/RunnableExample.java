@@ -1,4 +1,4 @@
-package ThreadAndRunnableAndCallable;
+package Lec_01_ThreadAndRunnableAndCallable;
 
 //class ThreadAndRunnableAndCallable.MyRunnable implements Runnable {
 //    @Override

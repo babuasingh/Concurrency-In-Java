@@ -1,4 +1,4 @@
-package ThreadAndRunnableAndCallable;
+package Lec_01_ThreadAndRunnableAndCallable;
 
 import java.util.concurrent.*;
 
