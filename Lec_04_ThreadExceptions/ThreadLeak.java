@@ -18,10 +18,10 @@ class SafeLock{
 
 public class ThreadLeak {
     public static void main(String[] args) {
-//        SafeLock obj=new SafeLock();
-//        new Thread(obj::waitForSignal," thread-1").start();
+        SafeLock obj=new SafeLock();
+        new Thread(obj::waitForSignal," thread-1").start();
 
-//        int val = Runtime.getRuntime().availableProcessors();
-//        System.out.println(val);
+        int val = Runtime.getRuntime().availableProcessors();
+        System.out.println(val);
     }
 }

@@ -58,20 +58,20 @@ public class ThreadPoolAndThreadStates {
 
 
         // each thread is having different resouce to handle , so there is no synchrinization
-        System.out.println("Each thread is working on a different resouce , no synchronization");
-
-        for(int i=1;i<=5;i++){
-            executorService.submit(new ThreadPoolAndThreadStatesExample(i));
-        }
+//        System.out.println("Each thread is working on a different resouce , no synchronization");
+//
+//        for(int i=1;i<=5;i++){
+//            executorService.submit(new ThreadPoolAndThreadStatesExample(i));
+//        }
 
         // Now we have a shared resouce so each thread is sharing lock on same object and we see here synchronization
 
 //        Thread.sleep(12000);
-//        System.out.println("Now Threads share the same resouce ,execution one thread at a time");
-//        Object object=new Object();
-//        for(int i=1;i<=5;i++){
-//            executorService.submit(new ThreadPoolExample2(i,object));
-//        }
+        System.out.println("Now Threads share the same resouce ,execution one thread at a time");
+        Object object=new Object();
+        for(int i=1;i<=5;i++){
+            executorService.submit(new ThreadPoolExample2(i,object));
+        }
 
 
 

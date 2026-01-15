@@ -5,7 +5,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReentrantReadWriteLockExample {
-
+//    ReentrantReadWriteLock lets multiple threads read a resource simultaneously
+//    but only one thread can write to it at a time, blocking both readers and other writers during the write operation.
     public ReentrantReadWriteLock rwlock = new ReentrantReadWriteLock();
     public int counter=0;
 

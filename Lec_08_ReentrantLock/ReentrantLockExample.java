@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantLockExample {
 
     private int counter = 0;
-
+//    ReentrantLock lets a thread acquire the same lock multiple times without causing a deadlock.
     public ReentrantLock lock = new ReentrantLock();
 
     public void increment() {

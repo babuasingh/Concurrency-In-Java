@@ -32,8 +32,6 @@ public class ThreadPool {
         for(int i=1;i<=5;i++){
             executorService.submit(new ThreadPoolExample(i));
         }
-
-
         executorService.shutdown();
 
 

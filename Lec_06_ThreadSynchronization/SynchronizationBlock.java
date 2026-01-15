@@ -34,10 +34,8 @@ public class SynchronizationBlock {
         Thread[] threads = new Thread[numberOfThreads];
         // Create and start threads that execute the increment method.
         for (int i = 0; i < numberOfThreads; i++) {
-            threads[i] = new Thread(new Runnable() {
-                public void run() {
+            threads[i] = new Thread(()-> {
                     counter.increment();
-                }
             }, "Thread-" + (i + 1));
             threads[i].start();
         }

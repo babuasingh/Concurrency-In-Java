@@ -50,6 +50,15 @@ package Lec_02_ThreadStates;
 public class WaitingState {
     public static void main(String[] args) {
 
+        // Just remember : wait() and notify() should be called inside synchronized block only
+        // Also , wait() releases the lock , notify() does not release the lock .
+        // After notify() is called , the waiting thread does not resume immediately , it has to wait for the lock to be released
+        // by the notifying thread first before it can resume execution .
+        // wait() relaeses the lock immediately upon being called , but notify() only signals the waiting thread and continues to hold the lock until the synchronized block is exited .
+        // Difference between wait and sleep :
+        // 1. wait() is called on an object and releases the lock on that object
+        // 2. sleep() is a static method of Thread class and does not release any locks held by the thread
+
         Object object=new Object();
 //        Thread waiter = new Waiter(obj);
 //        Thread chef=new Chef(obj);

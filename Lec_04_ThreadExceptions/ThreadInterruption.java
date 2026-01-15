@@ -10,6 +10,7 @@ public class ThreadInterruption {
                 }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
+                System.out.println(Thread.currentThread().getName()+" was interrupted during sleep");
             }
         });
 
