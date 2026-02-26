@@ -2,6 +2,43 @@ package BoundedBlockingQueue;
 import java.util.*;
 import java.util.concurrent.*;
 
+
+/*
+Question : Why cant we use the wait/notify to implement the bounded blocking queue?
+Answer : We can use wait/notify to implement the bounded blocking queue but it is not preferred .
+The reason is that wait/notify can lead to issues like missed signals and spurious wakeups,
+which can cause threads to wait indefinitely or wake up without the intended condition being met.
+This can make the implementation more complex and error-prone.
+
+Missed Signals :-> If a producer thread calls notify() before a consumer thread starts waiting, the consumer will miss the signal and wait indefinitely.
+Imagine this scenario:
+Step 1
+Producer executes:
+notify();
+But at this moment:
+No consumer has called wait() yet.
+So nothing happens.
+The notification disappears.
+Step 2
+Now consumer executes:
+wait();
+But the signal already happened.
+So now:
+Consumer goes to sleep.
+Nobody will wake it up.
+It waits forever.
+💥 Deadlock.
+
+That’s a missed signal.
+
+Spurious Wakeups :-> Threads can wake up without being notified, which can lead to unexpected behavior if the condition is not re-checked after waking up.
+
+On the other hand, using semaphores provides a more robust and straightforward way to manage the synchronization
+ between producer and consumer threads, ensuring that the queue operates correctly without the risk of missed signals
+ or spurious wakeups. Semaphores allow us to control access to the queue and manage the number of items in the queue more
+ effectively, making it a better choice for implementing a bounded blocking queue.
+ */
+
 class BoundedBlockingQueue {
 
     Queue<Integer> queue;
