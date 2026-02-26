@@ -15,6 +15,7 @@ public class ProducerConsumer {
                 synchronized (list) {
                     while (list.size() == maxbuffersize && running) {
                         System.out.println(Thread.currentThread().getName() + " is waiting to produce.....");
+                        list.notifyAll(); //Signal any waiting consumer before waiting
                         list.wait();
                     }
                     if(!running) // make sures that it stops after seconds(mentioned in the main method)
@@ -37,6 +38,7 @@ public class ProducerConsumer {
                 synchronized (list) {
                     while (list.size() == 0 && running)  {
                         System.out.println(Thread.currentThread().getName() + " is waitinggggggg to consume......");
+                        list.notify(); //Signal any waiting producer before waiting
                         list.wait();
                     }
                     if(!running) // make sures that it stops after seconds(mentioned in the main method)
