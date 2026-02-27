@@ -1,4 +1,4 @@
-package Lec_07_ThreadCommunication;
+package ConcurrencyQuestions;
 
 import java.util.ArrayList;
 import java.util.List;

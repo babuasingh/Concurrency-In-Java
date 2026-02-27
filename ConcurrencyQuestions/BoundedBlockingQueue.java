@@ -1,4 +1,4 @@
-package BoundedBlockingQueue;
+package ConcurrencyQuestions;
 import java.util.*;
 import java.util.concurrent.*;
 
